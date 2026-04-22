@@ -1,5 +1,5 @@
 # Time: O(n) - Single traversal of list
-# Space: O(1) - Single variable declared
+# Space: O(1) - Declaration of integer variables
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         k = 0
