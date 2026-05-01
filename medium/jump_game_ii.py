@@ -23,7 +23,7 @@ class Solution:
         jumps = 0
         current_end = 0
         furthest_reach = 0
-        # We don't need to jump from the last element
+        # We don't need to jump from the last element (referring to other solution)
         for i in range(len(nums) - 1):
             # Update how far we could possibly get
             furthest_reach = max(furthest_reach, i + nums[i])
