@@ -4,13 +4,30 @@ class Solution:
     def hIndex(self, citations: List[int]) -> int:
         citations.sort(reverse=True)
         h = 0
-        for i, cite in enumerate(citations):
-            # i + 1 represents the number of papers we are currently considering
-            # If the current paper has at least i + 1 citations, then h could be i + 1
-            if cite >= i + 1:
+        for i in range(len(citations)):
+            if i + 1 <= citations[i]:
                 h = i + 1
             else:
-                # Since the list is sorted, if this paper doesn't qualify,
-                # no subsequent paper will either.
                 break
         return h
+
+# Alternative: Bucket Sort
+# Time: O(n) - Single traversal of list
+# Space: O(1) - Only declaration of variables
+class Solution:
+    def hIndex(self, citations: List[int]) -> int:
+        n = len(citations)
+        buckets = [0] * (n + 1)
+        # Fill buckets: anything over n citations goes into the last bucket
+        for c in citations:
+            if c >= n:
+                buckets[n] += 1
+            else:
+                buckets[c] += 1
+        # Walk backwards through buckets to find the H-index
+        total_papers = 0
+        for h in range(n, -1, -1):
+            total_papers += buckets[h]
+            if total_papers >= h:
+                return h
+        return 0
