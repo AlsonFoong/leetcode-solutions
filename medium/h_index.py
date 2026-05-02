@@ -13,7 +13,7 @@ class Solution:
 
 # Alternative: Bucket Sort
 # Time: O(n) - Single traversal of list
-# Space: O(1) - Only declaration of variables
+# Space: O(n) - Up to every element stored in buckets
 class Solution:
     def hIndex(self, citations: List[int]) -> int:
         n = len(citations)
