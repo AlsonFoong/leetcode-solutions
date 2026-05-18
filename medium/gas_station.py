@@ -13,4 +13,5 @@ class Solution:
                 tank = 0
                 index = i + 1
         return index
-# 1. If you start at gas[0] and fail at gas[i], you can conclude that any starting location between gas[0] and gas[i] (inclusive) cannot be the answer. Therefore, restarting at the next station is the only option.
+# 1. If you start at gas[0] and fail at gas[i], you can conclude that any starting location between gas[0] and gas[i]
+#    (inclusive) cannot be the answer. Therefore, restarting at the next station is the only option.
