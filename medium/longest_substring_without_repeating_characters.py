@@ -1,5 +1,5 @@
 # Time: O(n) - Single traversal of string; each character added and removed at most once
-# Space: O(k) - Up to all 26 letters stored (k is bounded by the size of the alphabet)
+# Space: O(k) - Up to all 26 letters stored plus some characters (k is bounded by the size of the character set used)
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         chars = set()
